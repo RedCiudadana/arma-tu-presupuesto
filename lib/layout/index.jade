@@ -1,0 +1,26 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+    title #{config.organizationName}
+    meta(name='description' content='')
+    meta(name='viewport' content='width=device-width')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://bootswatch.com/darkly/bootstrap.css')
+    link(rel='stylesheet', href='/app.css')
+    //- link(rel='stylesheet', href='/sprite.css')
+
+  body
+    .header-container
+    .row
+      .col-sm-4
+      .col-sm-4
+        #flash-error.alert.alert-danger.hide(role='alert')
+      .col-sm-4
+    .main-container
+    .footer-container
+
+    script.
+      window.config=!{JSON.stringify(config)}
+    script(src='/app.js')
+    //- link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato:400,700,400italic')

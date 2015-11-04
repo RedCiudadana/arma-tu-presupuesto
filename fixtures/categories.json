@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Salud",
+    "composes": ["Salud"],
+    "image": "saludIcon.svg"
+  },
+  {
+    "name": "Promoción y Acción Social",
+    "composes": ["Promoción y Acción Social"],
+    "image": "socialIcon.svg"
+  },
+  {
+    "name": "Transporte y Espacio Público",
+    "composes": ["Transporte"],
+    "image": "transporteIcon.svg"
+  },
+  {
+    "name": "Administración y Legislación",
+    "composes": ["Deuda pública - Intereses", "Dirección Ejecutiva", "Control de la Gestión", "Administración Física", "Legislativa", "Seguros y Finanzas", "Relaciones Interiores"],
+    "image": "administracionIcon.svg"
+  },
+  {
+    "name": "Vivienda",
+    "composes": ["Vivienda"],
+    "image": "viviendaIcon.svg"
+  },
+  {
+    "name": "Ecología y Medio Ambiente",
+    "composes": ["Servicios Urbanos", "Ecología", "Agua Potable y Alcantarillado"],
+    "image": "ecologiaIcon.svg"
+  },
+  {
+    "name": "Cultura y Turismo",
+    "composes": ["Cultura", "Turismo"],
+    "image": "turismoicon.svg"
+  },
+  {
+    "name": "Educación",
+    "composes": ["Educación"],
+    "image": "educacionIcon.svg"
+  },
+  {
+    "name": "Trabajo e Industria",
+    "composes": ["Trabajo", "Industria y Comercio"],
+    "image": "trabajoIcon.svg"
+  },
+  {
+    "name": "Seguridad y Justicia",
+    "composes": ["Judicial", "Seguridad Interior"],
+    "image": "seguridadIcon.svg"
+  }
+]
