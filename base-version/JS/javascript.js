@@ -1,4 +1,5 @@
 window.DEFAULT_COLOR = 'rgba(255,255,255,.0)';
+
 $(document).ready(function(e) {
 	LoadHelp();
 	
@@ -648,12 +649,22 @@ function getCookie(cname) {
 	var rear;
 
 	setInterval(function() {
-		if (!front || !front.length) front = $('.front-clouds');
-		if (front.length) front.css('background-position', posFront++ + " 50%");
+		if (!front || !front.length) {
+			front = $('.front-clouds');
+		}
+
+		if (front.length) {
+			front.css('background-position', posFront++ + " 50%");
+		}
 	}, 20);
 
 	setInterval(function() {
-		if (!rear || !rear.length) rear = $('.rear-clouds');
-		if (rear.length) rear.css('background-position', posRear++ + "px");
+		if (!rear || !rear.length) {
+			rear = $('.rear-clouds');
+		}
+
+		if (rear.length) {
+			rear.css('background-position', posRear++ + "px");
+		}
 	}, 40);
 })();
