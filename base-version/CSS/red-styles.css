@@ -1,0 +1,13 @@
+html,body {
+    background-color: #fff;
+}
+
+.red-header,
+.red-footer {
+    background-color: #662E91;
+}
+
+.logo-img{
+  width: 30%;
+  padding-top: 15px;
+}

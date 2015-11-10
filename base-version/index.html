@@ -15,12 +15,18 @@
 
 <title>Armá tu ciudad - Partido de la Red</title>
 
-<link href="CSS/styles.css" rel='stylesheet' type="text/css" >
+
 <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+<link href="CSS/styles.css" rel='stylesheet' type="text/css" >
+<link href="CSS/red-styles.css" rel='stylesheet' type="text/css" >
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="JS/jquery.ui.touch-punch.min.js"></script>
 <script src="JS/data.js"></script>
 <script src="JS/javascript.js"></script>
@@ -39,84 +45,92 @@
   ga('send', 'pageview');
 </script>
 
-<script>
-// Include the UserVoice JavaScript SDK (only needed once on a page)
-UserVoice=window.UserVoice||[];(function(){
-	var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/VVCYJslML18ENN0zsTow.js';
-	var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
-
-//
-// UserVoice Javascript SDK developer documentation:
-// https://www.uservoice.com/o/javascript-sdk
-//
-
-// Identify the user and pass traits
-// To enable, replace sample data with actual user traits and uncomment the line
-UserVoice.push(['identify', {
-  //email:      'john.doe@example.com', // User’s email address
-  //name:       'John Doe', // User’s real name
-  //created_at: 1364406966, // Unix timestamp for the date the user signed up
-  //id:         123, // Optional: Unique id of the user (if set, this should not change)
-  //type:       'Owner', // Optional: segment your users by type
-  //account: {
-  //  id:           123, // Optional: associate multiple users with a single account
-  //  name:         'Acme, Co.', // Account name
-  //  created_at:   1364406966, // Unix timestamp for the date the account was created
-  //  monthly_rate: 9.99, // Decimal; monthly rate of the account
-  //  ltv:          1495.00, // Decimal; lifetime value of the account
-  //  plan:         'Enhanced' // Plan name for the account
-  //}
-}]);
-
-// Set global widget options
-UserVoice.push(['set', {
-  accent_color: '#169CBF'
-}]);
-
-// Add default trigger to the bottom-right corner of the window:
-UserVoice.push(['addTrigger', {
-  mode: 'contact',
-  trigger_color: 'white',
-  trigger_background_color: 'rgba(46, 49, 51, 0.6)',
-  trigger_position: 'top-right'
-}]);
-
-// Or, use your own custom trigger:
-//UserVoice.push(['addTrigger', '#id', { mode: 'satisfaction' }]);
-</script>
-
-<div class="header">
-	<div class="headerName">Armá tu ciudad</div>
-    <div class="total-dinero"></div>
-    <div class='buttonsWrapper-left'></div>
-    <div class='buttonsWrapper-right'></div>
-</div>
+<nav class="navbar navbar-default navbar-fixed-top red-header">
+  <div class="container">
+    <a href="/">
+      <img src="IMG/icons/logo-header.png" class="logo-img pull-left" />
+    </a>
+    <nav class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="hoverless-anchor" href="http://comunicaton.adondevanmisimpuestos.gt/">
+            <img src="IMG/icons/ICONOS-05.png" style="height: 24px; width: 24px;"> Comunicaton
+          </a>
+        </li>
+        <li>
+          <a class="hoverless-anchor" href="glosario.html">
+            <img src="IMG/icons/ICONOS-06.png" style="height: 24px; width: 24px;"> Glosario
+          </a>
+        </li>
+        <li>
+          <a class="hoverless-anchor" href="informacion.html">
+            <img src="IMG/icons/ICONOS-08.png" style="height: 24px; width: 24px;"> Información
+          </a>
+        </li>
+        <li>
+          <a class="hoverless-anchor" href="metodologia.html">
+            <img src="IMG/icons/ICONOS-07.png" style="height: 24px; width: 24px;"> Metodología
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</nav>
 
 <div class="container">
-	<div class="container-wrapper">
-        <div id="inicio" class="inner-container"></div>
-        <div id="juego" class="inner-container"></div>
-        <div id="resultados" class="inner-container" style="background-color:#ddd;"></div>
-        <div id="datos" class="inner-container" style="background-color:#3F372E;"></div>
-	</div>
+  <div class="content-container">
+  </div>
 </div>
 
-<div class='footerContainer'>
-    <div style="max-width: 960px; margin:auto;">
-        <div style="font-size:30px; padding: 10px;">Armá tu ciudad</div>
-        <div class="contactContainer">
-            <div style="font-size: 23px;">Contactanos</div>
-            <a class="page" href="http://partidodelared.org" target="_blank"></a>
-            <a class="facebook" href="http://facebook.com/PartidoDeLaRed" target="_blank"></a>
-            <a class="twitter" href="http://twitter.com/PartidodelaRed" target="_blank"></a>
-            <a class="google" href="http://plus.google.com/101519187164139196788" target="_blank"></a>
+<footer class="red-footer">
+  <div class="inner">
+    <div class="container">
+      <div class="col-md-4 pull-left">
+        <p>Ayúdanos a llegar a más personas</p>
+        <ul>
+          <li>
+            <a class="hoverless-anchor" href="http://www.redciudadana.org/">
+              <img src="IMG/red/donaciones.png" style="height: 17px; width: 17px;">Donaciones
+            </a>
+          </li>
+          <li>
+            <a class="hoverless-anchor" href="http://voluntarios.redciudadana.org/">
+              <img src="IMG/red/voluntariado.png" style="height: 17px; width: 17px;">Voluntariado
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 pull-left">
+        <div class="row">
+          <div class="col-md-6">
+            <p>Desarrollado por:</p>
+            <a href="http://www.redciudadana.org/">
+              <img src="IMG/red/red-ciudadana-logo.png" class="img-responsive">
+            </a>
+          </div>
         </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Con el apoyo de:</p>
+            <a href="https://hivos.org/">
+              <img src="IMG/red/hivos-logo.png" class="img-responsive">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 pull-left">
+        <p>Contáctanos</p>
+        <ul>
+            <li><a href="mailto:info@redciudadana.org" class="hoverless-anchor"><i class="icon-envelope-alt"></i>  Email</a></li>
+            <li><i class="icon-map-marker"></i>   12 calle 1-25 zona 10</li>
+            <li>Edificio Géminis 10</li>
+            <li>Torre Norte Oficina 14-13</li>
+            <li></li>
+        </ul>
+      </div>
     </div>
-    <div class="creditsContainer">
-        <div>Hecho con <div class="heartIcon"></div> por pares del Partido de la Red - 2015</div>
-    </div>
-</div>
-
+  </div>
+</footer>
 </body>
-
 </html>
