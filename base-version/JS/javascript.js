@@ -332,16 +332,23 @@ function CargarResultados(data)
 			$(wrapper1).append(titulo1);
 	
 			var shareFacebook = CrearElemento('div','shareButtonFacebook');
-			$(shareFacebook).html('Compartila en Facebook');
+			$(shareFacebook).html('Compartilo en Facebook');
 			$(shareFacebook).click(function(e) {
-                ShareButtonFacebook(window.location.href, 'Así armé el presupuesto para la ciudad', 'Decidí a que área le darías más y a cual menos dinero para conformar el presupuesto de la ciudad. Luego compará con el presupuesto actual y con los que crearon los demás ciudadanos', location.origin+location.pathname+'IMG/shareImage.png');
+                ShareButtonFacebook(
+                	window.location.href,
+                	'Así armé el presupuesto de Guatemala',
+                	'Decide a qué área le darías más y a cuál menos dinero para '
+                		+ 'conformar el presupuesto de Guatemala. Luego compara con '
+                		+ 'el presupuesto actual y con los que crearon los demás ciudadanos',
+            		location.origin + location.pathname + 'IMG/shareImage.png'
+        		);
             });
 			$(wrapper1).append(shareFacebook);
 	
 			var shareTwitter = CrearElemento('div','shareButtonTwitter');
-			$(shareTwitter).html('Compartila en Twitter');
+			$(shareTwitter).html('Compartilo en Twitter');
 			$(shareTwitter).click(function(e) {
-                ShareButtonTwitter(window.location.href, 'Así armé el presupuesto para la ciudad ');
+                ShareButtonTwitter(window.location.href, 'Así armé el presupuesto de Guatemala ');
             });
 			$(wrapper1).append(shareTwitter);
 
@@ -403,8 +410,12 @@ function CargarMasInfo()
 {
 	// Información
 	var info = {
-		titulo: '¿Cómo se formula el presupuesto porteño?',
-		descripcion: 'Cada año, a partir de un proyecto que envía el Jefe de gobierno, la Legislatura porteña sanciona la ley de Presupuesto de la ciudad, que estipula la distribución de los fondos para cada área de gobierno.<br />Las prioridades de gestión de gobierno, así como el mantenimiento del estado, se deciden en el presupuesto.'
+		titulo: '¿Cómo se formula el presupuesto?',
+		descripcion: 'Cada año, a partir de un proyecto presentado por una comisión, '
+			+ 'el Congreso de la República sanciona la ley de Presupuesto, que '
+			+ 'estipula la distribución de los fondos para cada área de gobierno.<br />'
+			+ 'Las prioridades de gestión de gobierno, así como el mantenimiento del '
+			+ 'estado, se deciden en el presupuesto.'
 	};
 
 	//Cargar información en #datos

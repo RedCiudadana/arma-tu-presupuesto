@@ -338,7 +338,8 @@ html, body {
 }
 
 .headerName.button.selected {
-    background-color: #169CBF; color: #eee;
+    background-color: #169CBF;
+    color: #eee;
 }
 
 .headerName.button {

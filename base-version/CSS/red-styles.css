@@ -326,6 +326,7 @@ footer li > a {
 .total-dinero {
   top: 124px;
   background: transparent;
+  color: #333;
 }
 
 .items-base,
@@ -345,10 +346,41 @@ footer {
   height: auto;
 }
 
-/*.container {
-  bottom: 50px;
+#resultados {
+  padding-top: 124px;
+  padding-bottom: 150px;
 }
 
-footer {
-  margin-top: 0px;
-}*/
+#datos .title {
+  top: 26%;
+}
+
+#datos .subTitle {
+  top: 44%;
+}
+
+#datos .buttonIniciarJuego {
+  bottom: 110px;
+}
+
+#datos .buttonIniciarJuego:hover {
+  bottom: 120px;
+}
+
+.arma-container {
+  line-height: normal;
+}
+
+.headerName.button:hover {
+    background-color: #b2cf4f;
+    color: #eee;
+}
+
+.headerName.button.selected {
+    background-color: #b2cf4f;
+    color: #eee;
+}
+
+#juego {
+  background-color: #d0f5f3;
+}
