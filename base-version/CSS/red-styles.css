@@ -322,3 +322,33 @@ footer a, footer a:hover {
 footer li > a {
   cursor: pointer;
 }
+
+.total-dinero {
+  top: 124px;
+  background: transparent;
+}
+
+.items-base,
+.items-container {
+  bottom: 50px;
+}
+
+.dataContainer {
+  bottom: 90px;
+}
+
+footer {
+  margin-top: 0px;
+}
+
+.red-footer .container {
+  height: auto;
+}
+
+/*.container {
+  bottom: 50px;
+}
+
+footer {
+  margin-top: 0px;
+}*/

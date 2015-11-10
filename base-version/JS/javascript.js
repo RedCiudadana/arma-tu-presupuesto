@@ -7,7 +7,9 @@ $(document).ready(function(e) {
 	$.get('/api/budget/2015', function (data2015) {
 		window.categoriasGobierno2015 = ApiToBudget(data2015);
 		window.presupuestoTotal = 0;
-		window.categoriasGobierno2015.forEach(function(cat){window.presupuestoTotal += parseFloat(cat.presupuesto);});
+		window.categoriasGobierno2015.forEach(function(cat) {
+			window.presupuestoTotal += parseFloat(cat.presupuesto);
+		});
 
 		// Get categories
 		$.get('/api/categories', function (dataCategories) {
@@ -42,7 +44,7 @@ $(document).ready(function(e) {
 					});
 
 				else if (cookie)
-					//Get budget from id
+					// Get budget from id
 					$.get('/api/mybudget/'+cookie, function (dataHash) {
 						var data = ApiToBudget(dataHash);
 						CargaJuego(data, true);
@@ -139,7 +141,7 @@ function CargaJuego(_data, edicion)
 		$(terminarJuego).html('Terminar');
 		$(terminarJuego).click(function(e) {
 			CargarResultados(data);
-			//Guardar resultado en base de datos
+			// Guardar resultado en base de datos
 			var saveData = BudgetToApi(data);
 			GuardarData(saveData, function (respuesta)
 			{
@@ -150,9 +152,17 @@ function CargaJuego(_data, edicion)
 				var cookieName = 'mybudget';
 				var expireDate = new Date();
 				expireDate.setDate(expireDate.getDate() + 365);
-				//Crear cookie con un identificador del resultado
-				document.cookie = cookieName + '=' + window.editID + ';max-age=' + 60*60*24*365 + ';expires=' + expireDate.toGMTString();
-				//Agregar el identificador en la url
+
+				// Crear cookie con un identificador del resultado
+				document.cookie = cookieName
+					+ '='
+					+ window.editID
+					+ ';max-age='
+					+ 60*60*24*365
+					+ ';expires='
+					+ expireDate.toGMTString();
+
+				// Agregar el identificador en la url
 				SetURL(window.editID);
 			});
 		});
@@ -162,35 +172,57 @@ function CargaJuego(_data, edicion)
 		$(reiniciarJuego).addClass('resetButton');
 
 		var dineroTotal = CrearElemento('div','total-dinero');
-		$(dineroTotal).html('Presupuesto Total: '+FormateoDinero(window.presupuestoTotal));
+		$(dineroTotal).html('Presupuesto total: ' + FormateoDinero(window.presupuestoTotal));
 		$('#juego').append(dineroTotal);
-	
+
 		// Interaccion
 		$('.item-container:first').resizable({
 			handles: "e",
 			autoHide: true,
 			resize: function( event, ui ) {
 				var presupuesto = (ui.size.width + 2) / window.anchoTotal * window.presupuestoTotal;
-				$(ui.element).children('.textDataContainer').children('.presupuestoCategoria').html(FormateoDinero(presupuesto));
-	
+
+				$(ui.element)
+					.children('.textDataContainer')
+					.children('.presupuestoCategoria')
+					.html(FormateoDinero(presupuesto));
+
 				dif = ui.originalSize.width - ui.element.outerWidth(true);
-				siguientes = $('.ui-resizable-resizing').nextAll().filter(function(index, e){ return ( dif > 0 || (dif < 0 && $(e).outerWidth(true) > 12)) });
-				var sumaCategoria = (dif+2) / siguientes.length;
+				siguientes = $('.ui-resizable-resizing')
+					.nextAll()
+					.filter(function(index, e) {
+						return (
+							dif > 0
+							|| (
+								dif < 0 && $(e).outerWidth(true) > 12
+							)
+						);
+					});
+
+				var sumaCategoria = (dif + 2) / siguientes.length;
 				siguientes.each(function(index, element) {
-					var anchoCategoria = parseFloat($(element).attr('data-presupuesto')) / window.presupuestoTotal * window.anchoTotal + sumaCategoria;
+					var anchoCategoria = parseFloat($(element).attr('data-presupuesto')) / window.presupuestoTotal * window.anchoTotal
+						+ sumaCategoria;
+
 					var presupuesto = anchoCategoria / window.anchoTotal * window.presupuestoTotal;
-					$(this).children('.textDataContainer').children('.presupuestoCategoria').html(FormateoDinero(presupuesto));
+
+					$(this)
+						.children('.textDataContainer')
+						.children('.presupuestoCategoria')
+						.html(FormateoDinero(presupuesto));
+
 					$(element).css('width', anchoCategoria + 'px');
 				});
+
 				ui.element.css('width', ui.size.width + 'px');
 			},
-			stop: function(event, ui)
-			{
+			stop: function(event, ui) {
 				$(data).each(function(index, element) {
 					RecalcularPresupuesto(element);
 				});
 			}
 		});
+
 		$('.item-container:not(:first):not(:last)').resizable({
 			handles: "w,e",
 			autoHide: true,
@@ -245,7 +277,7 @@ function CargaJuego(_data, edicion)
 	
 				var presupuesto = (ui.size.width + 2) / window.anchoTotal * window.presupuestoTotal;
 				$(ui.element).children('.textDataContainer').children('.presupuestoCategoria').html(FormateoDinero(presupuesto));
-	
+
 				siguientes.each(function(index, element) {
 					var anchoCategoria = parseFloat($(element).attr('data-presupuesto')) / window.presupuestoTotal * window.anchoTotal + sumaCategoria;
 					$(element).css('width', anchoCategoria + 'px');
@@ -275,13 +307,11 @@ function CargaJuego(_data, edicion)
 	$('.header').addClass('solid');
 	$('.headerName').fadeIn();
 	$('.item-container').css('border-color', 'rgba(0,0,0,.1)');
-	$('.container-wrapper').animate({top: '-100%'}, 1000, function()
-		{
-			setTimeout(function(){
-				$(dineroTotal).slideDown('fast');
-			}, 200);
-		}
-	);
+	$('.container-wrapper').animate({top: '-100%'}, 1000, function() {
+		setTimeout(function(){
+			$(dineroTotal).slideDown('fast');
+		}, 200);
+	});
 }
 
 function CargarResultados(data)
@@ -298,7 +328,7 @@ function CargarResultados(data)
 		$(contenedor1).append(wrapper1);
 
 			var titulo1 = CrearElemento('div','headerName');
-			$(titulo1).html('Tu ciudad');
+			$(titulo1).html('Tu presupuesto');
 			$(wrapper1).append(titulo1);
 	
 			var shareFacebook = CrearElemento('div','shareButtonFacebook');
@@ -323,7 +353,7 @@ function CargarResultados(data)
 		$(contenedor2).append(wrapper2);
 
 			var botonTitulo2Hoy = CrearElemento('div','headerName button selected');
-			$(botonTitulo2Hoy).html('Buenos Aires hoy');
+			$(botonTitulo2Hoy).html('Guatemala hoy');
 			$(botonTitulo2Hoy).click(function(e) {
                 CargarData(contenedor2.children()[0], categoriasGobierno2015, true, false);
 				$('.selected').removeClass('selected');
@@ -428,6 +458,7 @@ function CargarData(contenedor, data, porcentaje, conDescripcion)
 
 	var base = CrearElemento('div', 'items-base');
 	$(contenedor).append(base);
+
 	var itemsContainer = CrearElemento('div', 'items-container');
 	$(contenedor).append(itemsContainer);
 
@@ -524,11 +555,17 @@ function Porcentaje(valor, total)
 
 function FormateoDinero(num)
 {
-	var str = (num/1000000).toFixed(2).toString().split('.');
+	var str = (num/1000000)
+		.toFixed(2)
+		.toString()
+		.split('.');
+
+	console.log()
+
     if (str[0].length >= 4) {
-        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1.');
+        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
     }
-    return '$' + str.join(',') + ' M';
+    return 'Q' + str.join('.') + ' M';
 }
 
 function CrearElemento(tag, className)
@@ -550,7 +587,7 @@ function compare(a,b) {
 
 function SetURL(id)
 {
-	var title = 'Armá tu ciudad - ciudad ' + id;
+	var title = 'Arma tu presupuesto - ciudad ' + id;
 	var url = window.location.origin + location.pathname + '#' + id;
     if (typeof (history.pushState) != "undefined") 
 	{
@@ -595,10 +632,12 @@ function GuardarData(data, cb)
 function ApiToBudget(_data)
 {
 	var data = null;
-	if(_data.rows)
+
+	if (_data.rows)
 		data = _data.rows;
 	else
 		data = _data;
+
 	return data.map(function(budget) {
 		return {
 			codigo: budget.category._id,
