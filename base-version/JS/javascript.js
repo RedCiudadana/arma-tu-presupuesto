@@ -69,7 +69,12 @@ function LoadHelp()
 	$('.buttonsWrapper-left').append(helpButton);
 
 		var helpPanel = CrearElemento('div','helpPanel');
-		$(helpPanel).html('Arma tu presupuesto y haz pública tu forma de priorizar las necesidades de nuestro país.');
+		$(helpPanel).html(
+			'Arma tu presupuesto y haz pública tu forma de priorizar las necesidades '
+				+ 'de nuestro país. <br />1. Arrastra con tu mouse sobre las flechas '
+				+ 'que aparecerán en cada bloque. <br /> 2. Arrastra hacia la derecha '
+				+ 'o izquierda para asignar el presupuesto de cada rubro. <br /> 3. Comparte '
+				+ 'tu visión del presupuesto a través de las redes sociales.');
 		$('body > .container').append(helpPanel);
 }
 

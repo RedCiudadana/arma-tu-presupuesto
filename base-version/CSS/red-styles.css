@@ -295,7 +295,12 @@ footer a, footer a:hover {
 }
 
 .helpPanel {
-    padding-top: 124px;
+    padding-top: 150px;
+    text-align: left;
+    line-height: 40px;
+    font-size: 25px;
+    line-height: 75px;
+    color: rgba(0,0,0,.6);
 }
 
 .title {
@@ -311,11 +316,4 @@ footer a, footer a:hover {
   border-style: none;
   background-image: none;
   background-color: #783c8f;
-}
-
-.helpPanel {
-    text-align: center;
-    line-height: 40px;
-    font-size: 25px;
-    color: rgba(0,0,0,.6);
 }
