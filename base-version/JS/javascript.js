@@ -3,45 +3,45 @@ window.DEFAULT_COLOR = 'rgba(255,255,255,.0)';
 $(document).ready(function(e) {
 	LoadHelp();
 	
-	//Get budget from 2015
+	// Get budget from 2015
 	$.get('/api/budget/2015', function (data2015) {
 		window.categoriasGobierno2015 = ApiToBudget(data2015);
 		window.presupuestoTotal = 0;
 		window.categoriasGobierno2015.forEach(function(cat){window.presupuestoTotal += parseFloat(cat.presupuesto);});
 
-		//Get categories
+		// Get categories
 		$.get('/api/categories', function (dataCategories) {
 			CargarDefault(dataCategories, window.presupuestoTotal);
 
-			//Get average budget
+			// Get average budget
 			$.get('/api/mybudget/average', function (data) {
 				window.categoriasAverage = ApiToAverage(data);
 
-				//Decidir que hacer en base al hash de la url y la cookie
+				// Decidir que hacer en base al hash de la url y la cookie
 				var hash = document.location.href.split('#')[1];
 				var cookie = getCookie('mybudget');
-				if(hash && hash!=='')
 
-					//Get budget from id
-					$.get('/api/mybudget/'+hash, function (dataHash) {
+				if (hash && hash !== '')
+					// Get budget from id
+					$.get('/api/mybudget/' + hash, function (dataHash) {
 						var data = ApiToBudget(dataHash);
-						if(cookie)
-							if(hash == cookie)
+						if (cookie)
+							if (hash == cookie)
 							{
 								window.editID = hash;
-								//Cargar el budget del identificador del hash y SI permitir edicición
+								// Cargar el budget del identificador del hash y SI permitir edicición
 								CargaJuego(data, true);
 							}
 							else
-								//Cargar el budget del identificador del hash y NO permitir edicición
+								// Cargar el budget del identificador del hash y NO permitir edicición
 								CargaJuego(data, false);
 						else
 							CargaJuego(data, false);
 					}).fail(function() {
 					    CargarInicio();
 					});
-				else if(cookie)
 
+				else if (cookie)
 					//Get budget from id
 					$.get('/api/mybudget/'+cookie, function (dataHash) {
 						var data = ApiToBudget(dataHash);
@@ -56,19 +56,11 @@ $(document).ready(function(e) {
 	});
 });
 
+/**
+ * Cargar botón de ayuda
+ */
 function LoadHelp()
 {
-	var aboutButton = CrearElemento('div', 'buttonHeader aboutButton');
-	$(aboutButton).html('Acerca de');
-	$(aboutButton).click(function(e) {
-		$('.aboutPanel').slideToggle();
-	});
-	$('.buttonsWrapper-left').append(aboutButton);
-
-		var aboutPanel = CrearElemento('div','aboutPanel');
-		$(aboutPanel).html();
-		$('.container').append(aboutPanel);
-
 	var helpButton = CrearElemento('div', 'buttonHeader helpButton');
 	$(helpButton).html('Ayuda');
 	$(helpButton).click(function(e) {
@@ -81,19 +73,25 @@ function LoadHelp()
 		$('.container').append(helpPanel);
 }
 
+/**
+ * Cargar splash screen 'Si tuvieras el poder...'
+ */
 function CargarInicio()
 {
-	var sky = CrearElemento('div', 'street-section-sky');
-	$('#inicio').append(sky);
-		$(sky).append(CrearElemento('div', 'rear-clouds'));
-		$(sky).append(CrearElemento('div', 'front-clouds'));
+	var sky = CrearElemento('div');
 
 	var	titulo = CrearElemento('div', 'title');
-	$(titulo).html('Armá tu ciudad');
+
+	$(titulo).html('ARMA TU PRESUPUESTO');
 	$('#inicio').append(titulo);
 
 	var	subTitulo = CrearElemento('div', 'subTitle');
-	$(subTitulo).html('Hacé como si fueras un/a legislador/a y designá el porcentaje del presupuesto que querés destinar a cada área </br> ¿Qué considerás prioritario? ¿Qué deseás mejorar?');
+	$(subTitulo).html(
+		'Si tuvieras el <strong>poder de decidir</strong> cómo gastar <br />estos '
+			+ 'Q70 mil 600 millones ¿Cambiarías algo? <br />'
+			+ 'Arma tu presupuesto e incide en las decisiones haciéndote escuchar.'
+	);
+
 	$('#inicio').append(subTitulo);
 	
 	var iniciarJuego = CrearElemento('div', 'buttonIniciarJuego');
@@ -101,9 +99,16 @@ function CargarInicio()
 	$(iniciarJuego).click(function(e) {
 		CargaJuego(window.categoriasDefault, true);
     });
+
 	$('#inicio').append(iniciarJuego);
 }
 
+/**
+ * Cargar pantalla inicial de juego, ya sea en modo edición o no
+ *
+ * @param {[type]} _data   [description]
+ * @param {[type]} edicion [description]
+ */
 function CargaJuego(_data, edicion)
 {
 	$('#resultados').html('');
@@ -121,7 +126,7 @@ function CargaJuego(_data, edicion)
 	});
 	$('.buttonsWrapper-right').append(reiniciarJuego);
 
-	if(edicion)
+	if (edicion)
 	{
 		var terminarJuego = CrearElemento('div', 'buttonHeader finishButton');
 		$(terminarJuego).html('Terminar');
@@ -148,12 +153,12 @@ function CargaJuego(_data, edicion)
 
 		$(reiniciarJuego).html('Reiniciar');
 		$(reiniciarJuego).addClass('resetButton');
-			
+
 		var dineroTotal = CrearElemento('div','total-dinero');
 		$(dineroTotal).html('Presupuesto Total: '+FormateoDinero(window.presupuestoTotal));
 		$('#juego').append(dineroTotal);
 	
-		//Interaccion
+		// Interaccion
 		$('.item-container:first').resizable({
 			handles: "e",
 			autoHide: true,
@@ -254,13 +259,12 @@ function CargaJuego(_data, edicion)
 				});
 			}
 		});
-		
 	}
 	else
 	{
 		CargarData('#juego', data, false, true);
 	}
-	//Desplazamiento hacia el contenedor del juego
+	// Desplazamiento hacia el contenedor del juego
 	$('.header').addClass('solid');
 	$('.headerName').fadeIn();
 	$('.item-container').css('border-color', 'rgba(0,0,0,.1)');
@@ -409,26 +413,24 @@ function CargarMasInfo()
 
 function CargarData(contenedor, data, porcentaje, conDescripcion)
 {
-	//Borro el contenido del contenedor
+	// Borrar el contenido del contenedor
 	$(contenedor).html('');
-	
-	//Creación del cielo, calle base y contenedor de categorias
+
+	// Crear del cielo, calle base y contenedor de categorias
 	var sky = CrearElemento('div', 'street-section-sky');
-	$(contenedor).append(sky);
-		$(sky).append(CrearElemento('div', 'rear-clouds'));
-		$(sky).append(CrearElemento('div', 'front-clouds'));
+
 	var base = CrearElemento('div', 'items-base');
 	$(contenedor).append(base);
 	var itemsContainer = CrearElemento('div', 'items-container');
 	$(contenedor).append(itemsContainer);
-	
-	//Calculo de presupuestoTotal en base a la suma de los presupuestos de todas las categoiras
+
+	// Calcular presupuestoTotal en base a la suma de los presupuestos de todas las categoiras
 	window.presupuestoTotal = 0;
 	data.forEach(function(cat){window.presupuestoTotal += parseFloat(cat.presupuesto);});
 	
 	window.anchoTotal = $(itemsContainer).outerWidth(true);
-	
-	//Carga de cada categoria en el contenedor con un ancho relativo a su presupuesto
+
+	// Cargar cada categoria en el contenedor con un ancho relativo a su presupuesto
 	var porcentajePromedio = 100 / data.length;
 	var leftAcumulador = 0;
 	data.sort(compare).forEach(function(cat)
@@ -525,7 +527,9 @@ function FormateoDinero(num)
 function CrearElemento(tag, className)
 {
 	var presupuestoCategoria = document.createElement(tag);
+
 	$(presupuestoCategoria).addClass(className);
+
 	return $(presupuestoCategoria);
 }
 
@@ -634,37 +638,16 @@ function BudgetToApi(_data)
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
+
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+
+        while (c.charAt(0) == ' ')
+    		c = c.substring(1);
+
+        if (c.indexOf(name) == 0)
+        	return c.substring(name.length,c.length);
     }
+
     return "";
 }
-
-(function() {
-	var posFront = 0;
-	var posRear = 0;
-	var front;
-	var rear;
-
-	setInterval(function() {
-		if (!front || !front.length) {
-			front = $('.front-clouds');
-		}
-
-		if (front.length) {
-			front.css('background-position', posFront++ + " 50%");
-		}
-	}, 20);
-
-	setInterval(function() {
-		if (!rear || !rear.length) {
-			rear = $('.rear-clouds');
-		}
-
-		if (rear.length) {
-			rear.css('background-position', posRear++ + "px");
-		}
-	}, 40);
-})();
