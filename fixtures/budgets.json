@@ -1,52 +1,52 @@
 [
   {
     "year": 2015,
+    "name": "Servicios públicos generales",
+    "amount": 36581754840
+  },
+  {
+    "year": 2015,
+    "name": "Defensa",
+    "amount": 2100253199
+  },
+  {
+    "year": 2015,
+    "name": "Orden público y seguridad",
+    "amount": 4526514967
+  },
+  {
+    "year": 2015,
+    "name": "Asuntos económicos",
+    "amount": 2113430894
+  },
+  {
+    "year": 2015,
+    "name": "Protección del medio ambiente",
+    "amount": 176265000
+  },
+  {
+    "year": 2015,
+    "name": "Vivienda y servicios comunitarios",
+    "amount": 4889966623
+  },
+  {
+    "year": 2015,
     "name": "Salud",
-    "amount": 16664749935
+    "amount": 5647224460
   },
   {
     "year": 2015,
-    "name": "Promoción y Acción Social",
-    "amount": 8624420258
-  },
-  {
-    "year": 2015,
-    "name": "Transporte y Espacio Público",
-    "amount": 3577366683
-  },
-  {
-    "year": 2015,
-    "name": "Administración y Legislación",
-    "amount": 10654180079
-  },
-  {
-    "year": 2015,
-    "name": "Vivienda",
-    "amount": 2080872723
-  },
-  {
-    "year": 2015,
-    "name": "Ecología y Medio Ambiente",
-    "amount": 11782190492
-  },
-  {
-    "year": 2015,
-    "name": "Cultura y Turismo",
-    "amount": 2805173093
+    "name": "Actividades recreativas, cultura y religión",
+    "amount": 423735168
   },
   {
     "year": 2015,
     "name": "Educación",
-    "amount": 19025791407
+    "amount": 12295590749
   },
   {
     "year": 2015,
-    "name": "Trabajo e Industria",
-    "amount": 977511993
-  },
-  {
-    "year": 2015,
-    "name": "Seguridad y Justicia",
-    "amount": 9488350848
+    "name": "Protección social",
+    "amount": 1845264100
   }
 ]
