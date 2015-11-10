@@ -69,8 +69,8 @@ function LoadHelp()
 	$('.buttonsWrapper-left').append(helpButton);
 
 		var helpPanel = CrearElemento('div','helpPanel');
-		$(helpPanel).html();
-		$('.container').append(helpPanel);
+		$(helpPanel).html('Arma tu presupuesto y haz pública tu forma de priorizar las necesidades de nuestro país.');
+		$('body > .container').append(helpPanel);
 }
 
 /**

@@ -305,3 +305,17 @@ footer a, footer a:hover {
 .subTitle {
   top: 45%;
 }
+
+.red-header {
+  color: #fff;
+  border-style: none;
+  background-image: none;
+  background-color: #783c8f;
+}
+
+.helpPanel {
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    color: rgba(0,0,0,.6);
+}
