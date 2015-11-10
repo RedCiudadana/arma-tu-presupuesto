@@ -250,20 +250,13 @@ footer a, footer a:hover {
 
 /** Arma tu presupuesto styles */
 
-.header {
-  position: fixed;
-  left: 0;
-  top: 72px;
-  width: 100%;
-  height: 50px;
+.navbar-default {
   z-index: 100;
-  background-color: transparent;
-  box-shadow: none;
 }
 
-/*.header.solid {
-  background-color: #b2cf4f;
-}*/
+.header {
+  top: 74px;
+}
 
 .content-container {
   padding-top: 72px;
@@ -299,4 +292,16 @@ footer a, footer a:hover {
 
 .buttonIniciarJuego:hover {
   bottom: 45px;
+}
+
+.helpPanel {
+    padding-top: 124px;
+}
+
+.title {
+  top: 35%;
+}
+
+.subTitle {
+  top: 45%;
 }
