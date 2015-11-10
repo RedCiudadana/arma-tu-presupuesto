@@ -318,6 +318,7 @@ footer a, footer a:hover {
   background-color: #783c8f;
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a,
+footer li > a {
   cursor: pointer;
 }
