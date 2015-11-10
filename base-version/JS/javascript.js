@@ -74,7 +74,9 @@ function LoadHelp()
 				+ 'de nuestro país. <br />1. Arrastra con tu mouse sobre las flechas '
 				+ 'que aparecerán en cada bloque. <br /> 2. Arrastra hacia la derecha '
 				+ 'o izquierda para asignar el presupuesto de cada rubro. <br /> 3. Comparte '
-				+ 'tu visión del presupuesto a través de las redes sociales.');
+				+ 'tu visión del presupuesto a través de las redes sociales.'
+		);
+
 		$('body > .container').append(helpPanel);
 }
 
