@@ -338,14 +338,6 @@ footer {
   padding-top: 124px;
 }
 
-#datos .title {
-  top: 26%;
-}
-
-#datos .subTitle {
-  top: 44%;
-}
-
 .arma-container {
   line-height: normal;
 }
@@ -365,6 +357,22 @@ footer {
 }
 
 .wrapper-bottom .shareButtonFacebook {
+  left: 20%;
   right: auto;
   left: 0px;
+}
+
+#datos .title {
+  font-size: 40px;
+  line-height: 50px;
+  max-width: 90%;
+  height: auto;
+  top: 23%;
+  left: 5%;
+}
+
+#datos .subTitle {
+  top: 30%;
+  font-size: 20px;
+  line-height: 33px;
 }

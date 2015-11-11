@@ -410,12 +410,15 @@ function CargarMasInfo()
 {
 	// Información
 	var info = {
-		titulo: '¿Cómo se formula el presupuesto?',
-		descripcion: 'Cada año, a partir de un proyecto presentado por una comisión, '
-			+ 'el Congreso de la República sanciona la ley de Presupuesto, que '
-			+ 'estipula la distribución de los fondos para cada área de gobierno.<br />'
-			+ 'Las prioridades de gestión de gobierno, así como el mantenimiento del '
-			+ 'estado, se deciden en el presupuesto.'
+		titulo: 'Paso a paso: el camino de mis impuestos',
+		descripcion:
+			"La <strong>Superintendencia de Administración Tributaria (SAT)</strong> recauda todos los impuestos de personas individuales o empresas.<br/>"
+			+ "Los fondos recaudados se trasladan al <strong>Ministerio de Finanzas (MINFIN)</strong>.<br/>"
+			+ "El <strong>Organismo Ejecutivo</strong> elabora el <strong>Presupuesto General de Ingresos y Egresos de la Nación</strong>. <br/>"
+			+ "El <strong>Congreso de la República</strong> discute y aprueba el Presupuesto.<br/>"
+			+ "El <strong>MINFIN</strong> distribuye los fondos a todas las entidades del Estado, de acuerdo con lo establecido en el Presupuesto.<br/>"
+			+ "Cada entidad debe evidenciar el apropiado gasto del dinero a través de la prestación oportuna de los servicios que le han sido designados.<br/>"
+			+ "La <strong>Contraloría General de Cuentas (CGC)</strong> debe fiscalizar el uso apropiado de los fondos.<br/>"
 	};
 
 	//Cargar información en #datos
