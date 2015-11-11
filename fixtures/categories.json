@@ -2,51 +2,51 @@
   {
     "name": "Servicios públicos generales",
     "composes": ["Servicios públicos generales"],
-    "image": "MONUMENTOS-01.svg"
+    "image": "Monumento-01.svg"
   },
   {
     "name": "Defensa",
     "composes": ["Defensa"],
-    "image": "MONUMENTOS-02.svg"
+    "image": "Monumento-02.svg"
   },
   {
     "name": "Orden público y seguridad",
     "composes": ["Orden público y seguridad"],
-    "image": "MONUMENTOS-03.svg"
+    "image": "Monumento-03.svg"
   },
   {
     "name": "Asuntos económicos",
     "composes": ["Asuntos económicos"],
-    "image": "MONUMENTOS-04.svg"
+    "image": "Monumento-04.svg"
   },
   {
     "name": "Protección del medio ambiente",
     "composes": ["Protección del medio ambiente"],
-    "image": "MONUMENTOS-05.svg"
+    "image": "Monumento-05.svg"
   },
   {
     "name": "Vivienda y servicios comunitarios",
     "composes": ["Vivienda y servicios comunitarios"],
-    "image": "MONUMENTOS-06.svg"
+    "image": "Monumento-06.svg"
   },
   {
     "name": "Salud",
     "composes": ["Salud"],
-    "image": "MONUMENTOS-07.svg"
+    "image": "Monumento-07.svg"
   },
   {
     "name": "Actividades recreativas, cultura y religión",
     "composes": ["Actividades recreativas, cultura y religión"],
-    "image": "MONUMENTOS-08.svg"
+    "image": "Monumento-08.svg"
   },
   {
     "name": "Educación",
     "composes": ["Educación"],
-    "image": "MONUMENTOS-09.svg"
+    "image": "Monumento-09.svg"
   },
   {
     "name": "Protección social",
     "composes": ["Protección social"],
-    "image": "MONUMENTOS-10.svg"
+    "image": "Monumento-10.svg"
   }
 ]
