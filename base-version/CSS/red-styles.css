@@ -286,14 +286,6 @@ footer a, footer a:hover {
     right: 0;
 }
 
-.buttonIniciarJuego {
-  bottom: 55px;
-}
-
-.buttonIniciarJuego:hover {
-  bottom: 45px;
-}
-
 .helpPanel {
     padding-top: 140px;
     text-align: left;
@@ -329,11 +321,6 @@ footer li > a {
   color: #333;
 }
 
-.items-base,
-.items-container {
-  bottom: 50px;
-}
-
 .dataContainer {
   bottom: 90px;
 }
@@ -348,7 +335,6 @@ footer {
 
 #resultados {
   padding-top: 124px;
-  padding-bottom: 150px;
 }
 
 #datos .title {
@@ -357,14 +343,6 @@ footer {
 
 #datos .subTitle {
   top: 44%;
-}
-
-#datos .buttonIniciarJuego {
-  bottom: 110px;
-}
-
-#datos .buttonIniciarJuego:hover {
-  bottom: 120px;
 }
 
 .arma-container {
@@ -383,4 +361,9 @@ footer {
 
 #juego {
   background-color: #d0f5f3;
+}
+
+.wrapper-bottom .shareButtonFacebook {
+  right: auto;
+  left: 0px;
 }

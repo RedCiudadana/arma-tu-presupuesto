@@ -79,7 +79,7 @@ function LoadHelp()
 				+ 'tu visión del presupuesto a través de las redes sociales.'
 		);
 
-		$('body > .container').append(helpPanel);
+		$('body > .arma-container').append(helpPanel);
 }
 
 /**
