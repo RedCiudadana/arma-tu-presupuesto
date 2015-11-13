@@ -623,22 +623,18 @@ function ShareButtonTwitter(url, message)
 function ShareButtonFacebook(url, title, message, image)
 {
 	window.open(
-		location.origin + location.pathname + 'close.html'
+		'http://www.facebook.com/dialog/feed?app_id=1077578065594362' +
+			'&link='+encodeURIComponent(url) +
+			'&picture=' + encodeURIComponent(image) +
+			'&name=' + encodeURIComponent(title) +
+			'&caption=' + 'via www.redciudadana.org - Red Ciudadana' +
+			'&description=' + encodeURIComponent(message) +
+			'&redirect_uri=' + location.origin + location.pathname + 'close.html' +
+			'&display=popup'
+		,
+		'Comparte en Facebook',
+		'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2
 	);
-
-	// window.open(
-	// 	'http://www.facebook.com/dialog/feed?app_id=1077578065594362' +
-	// 		'&link='+encodeURIComponent(url) +
-	// 		'&picture=' + encodeURIComponent(image) +
-	// 		'&name=' + encodeURIComponent(title) +
-	// 		'&caption=' + 'via www.redciudadana.org - Red Ciudadana' +
-	// 		'&description=' + encodeURIComponent(message) +
-	// 		'&redirect_uri=' + location.origin + location.pathname + 'close.html' +
-	// 		'&display=popup'
-	// 	,
-	// 	'Comparte en Facebook',
-	// 	'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2
-	// );
 }
 
 function GuardarData(data, cb)
