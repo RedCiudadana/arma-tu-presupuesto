@@ -615,7 +615,7 @@ function SetURL(id)
 function ShareButtonTwitter(url, message)
 {
 	window.open('https://twitter.com/intent/tweet?'+
-	'related=PartidodelaRed&'+
+	'related=RedCiudadana&'+
 	'text='+ encodeURIComponent(message + url + ' #YoCuidoMisImpuestos @jimmymoralesgt'),
 	'Compartí en Twitter', 'width=900,height=300,menubar=no,status=no,titlebar=no,top=200,left='+(screen.width-900)/2);
 }

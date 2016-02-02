@@ -46,8 +46,8 @@
     "test": "gulp test",
     "start": "babel-node lib/boot/index.js"
   },
-  "author": "Partido de la Red",
-  "repository": "git@github.com:jfresco/presupuesto-pdr.git",
+  "author": "Red Ciudadana",
+  "repository": "git@github.com:RedCiudadana/arma-tu-presupuesto.git",
   "license": "MIT",
   "engines": {
     "node": "0.12.5"

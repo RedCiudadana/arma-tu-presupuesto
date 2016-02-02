@@ -689,20 +689,6 @@ html, body {
     vertical-align: bottom;
 }
 
-.logoPartido {
-    margin: auto;
-    width: 240px;
-    max-width: 240px;
-    height: 240px;
-    background-image: url(../IMG/Isologo.gif);
-    background-size: cover;
-    background-position: center center;
-    border-radius: 125px;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
-    display: inline-block;
-}
-
-
 /*Share buttons*/
 
 .shareButtonFacebook {
