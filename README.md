@@ -46,8 +46,3 @@ hacia Heroku. Para ver los detalles sobre ese proceso accede
 
 Para instalación en producción recomendamos utilizar un manejador de procesos como
 [pm2](https://github.com/Unitech/pm2).
-
-## Acerca de
-
-Este proyecto partió de la implementación del proyecto [`presupuesto`](https://github.com/PartidoDeLaRed/presupuesto)
-desarrollado por [Partido de la Red](http://partidodelared.org/).
